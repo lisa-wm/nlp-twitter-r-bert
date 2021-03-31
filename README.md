@@ -10,7 +10,7 @@ Asmik Nalmpatian ([GitHub](https://github.com/asmiknalmpatian))
 
 Lisa Wimmer ([GitHub](https://github.com/lisa-wm))
 
-![title](figures/pp.PNG)
+![](figures/pp.PNG = 100x)
 
 ***
 
