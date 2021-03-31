@@ -4,5 +4,5 @@ plugins:
 
 
 remote_theme: heiswayi/the-plain
-logo_url: logo.PNG
+logo_url: figures/logo.PNG
 title: "Intro to NLP with R & Python for Twitter data"
