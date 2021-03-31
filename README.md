@@ -21,7 +21,7 @@ What to expect (and what not)
 ***
 
 ## **1 Intro**
-💬 A brief intro to **natural language processing** and the task at hand
+💬 A brief intro to natural language processing (NLP) and the task at hand
 
 ***
 
@@ -42,7 +42,7 @@ What to expect (and what not)
 ***
 
 ### **2.4 Results & visualization**
-📈 Analysing and visualizing results
+📈 Analyzing and visualizing results
 
 ***
 
