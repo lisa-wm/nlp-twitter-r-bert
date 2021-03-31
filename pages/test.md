@@ -6,9 +6,8 @@ bibliography: bibliography.bib
 
 ## Contents
 
-<span style="color: red;">
+<span style="color: red;">Colored text</span>
 [Slides](slides/test.pdf)
-</span>
 
 ***
 
@@ -18,7 +17,4 @@ bibliography: bibliography.bib
 
 ## Further reading
 
----
-nocite: | 
-  @li2017hyperband, @probstetal2019
-...
+S. Mart (2021): Good book, nice outlet.
