@@ -14,8 +14,6 @@ Lisa Wimmer ([GitHub](https://github.com/lisa-wm))
 
 ## **0 INTRO**
 
-***
-
 ###  What to expect (and what not)
 
 [contents](pages/test.html)
