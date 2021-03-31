@@ -1,12 +1,11 @@
 ---
 layout: page
-title: Fancy Title
+title: 1 Intro
 bibliography: bibliography.bib
 ---
 
 ## Contents
 
-<span style="color: red;">Colored text</span>
 [Slides](slides/test.pdf)
 
 ***
