@@ -10,6 +10,15 @@ bibliography: bibliography.bib
 
 ***
 
+## Quiz
+
+- [ ] Mercury
+- [x] Venus
+- [x] Earth (Orbit/Moon)
+- [x] Mars
+
+***
+
 ## Exercises
 
 [Exercise 1](https://colab.research.google.com/drive/1DWOyuhCFEke5ewwprmarsYzSmK7W4pTy?usp=sharing)
