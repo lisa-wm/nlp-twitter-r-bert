@@ -13,41 +13,41 @@ This website contains material used in the bloc seminar **Einführung in NLP-Anw
 
 ***
 
-# **0 PREFACE**
+## **0 Preface**
 What to expect (and what not)
 
 [Contents](pages/test.html)
 
 ***
 
-## **1 INTRO**
+## **1 Intro**
 A brief intro to **natural language processing** and the task at hand
 
 ***
 
-## **2 NLP WITH R**
-### **2.1 FEATURE GENERATION**
+## **2 NLP with R**
+### **2.1 Feature generation**
 Scraping, basic text cleaning & (static) feature generation
 
 ***
 
-### **2.2 TOPIC MODELING**
+### **2.2 Topic modeling**
 Extracting topics from text
 
 ***
 
-### **2.3 SENTIMENT ANALYSIS**
+### **2.3 Sentiment analysis**
 Creating a classification task & solve it using machine learning
 
 ***
 
-### **2.4 RESULTS & VISUALIZATION**
+### **2.4 Results & visualization**
 Analysing and visualizing results
 
 ***
 
-## **3 NLP WITH BERT**
-### **3.1 DEEP LEARNING & TRANSFER LEARNING**
+## **3 NLP with BERT**
+### **3.1 Deep learning & transfer learning**
 Teaching languages to machines
 
 ***
