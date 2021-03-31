@@ -14,15 +14,13 @@ This website contains material used in the bloc seminar **Einführung in NLP-Anw
 ***
 
 ## **0 Preface**
-🧭 What to expect (and what not)
-
 <!-- [Contents](pages/0_preface.html) -->
-[🧭 What to expect (and what not)](pages/test.html)
+🧭 [What to expect (and what not)](pages/0_preface.html)
 
 ***
 
 ## **1 Intro**
-💬 A brief intro to natural language processing (NLP) and the task at hand
+💬 [A brief intro to natural language processing (NLP) and the task at hand](pages/1_intro.hml)
 
 ***
 
