@@ -6,13 +6,11 @@ This website contains material used in the bloc seminar **Einführung in NLP-Anw
 
 ### Authors
 
-<img src="figures/bild_asmik.jfif" width="100" height="100">
-Asmik Nalmpatian ([GitHub](https://github.com/asmiknalmpatian))
+<img src="figures/bild_asmik.jfif" width="100" height="100"> Asmik Nalmpatian ([GitHub](https://github.com/asmiknalmpatian))
 
 
 
-<img src="figures/bild_lisa.PNG" width="100" height="100">
-Lisa Wimmer ([GitHub](https://github.com/lisa-wm))
+<img src="figures/bild_lisa.PNG" width="100" height="100"> Lisa Wimmer ([GitHub](https://github.com/lisa-wm))
 
 ***
 
