@@ -1,17 +1,38 @@
 ---
+title: "Fancy Title"
 layout: page
-title: Fancy Title
 bibliography: bibliography.bib
 ---
 
-# Contents
+## Contents
 
 [Slides](slides/test.pdf)
 
-# Exercises
+***
+
+## Quiz 
+
+```{r letter-a, echo=FALSE}
+# library(learnr)
+# question("What do you prefer?",
+#   answer("Pizza", correct = TRUE),
+#   answer("Broccoli", message = "Come on, there is only one right answer")
+# )
+```
+
+***
+
+## Exercises
 
 [Exercise 1](https://colab.research.google.com/drive/1DWOyuhCFEke5ewwprmarsYzSmK7W4pTy?usp=sharing)
 
-# Further reading
+***
 
-Interesting paper [@li2017hyperband]
+## Further reading
+
+---
+nocite: |
+  @li2017hyperband, @probstetal2019
+---
+
+<span style="color: red;">Colored text</span>
