@@ -4,5 +4,5 @@ plugins:
 
 
 remote_theme: heiswayi/the-plain
-logo_url: https://github.com/lisa-wm/consulting/blob/main/5_seminar/Logo_Consulting.JPG
+logo_url: Logo_Consulting.JPG
 title: "Intro to NLP with R \& Python for Twitter data"

@@ -1,4 +1,4 @@
-# Intro to NLP with R \& Python for Twitter data
+# Intro to NLP with R & Python for Twitter data
 
 ### About
 
@@ -17,5 +17,5 @@ Lisa Wimmer [GitHub](https://github.com/lisa-wm)
 
 ###  What to expect (and what not)
 
-[contents](pages/test.html)
+[Contents](pages/test.html)
 
