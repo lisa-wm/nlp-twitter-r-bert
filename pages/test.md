@@ -1,6 +1,6 @@
 ---
 layout: page
-title: intro
+title: 0 INTRO
 ---
 
 **this is a test**
