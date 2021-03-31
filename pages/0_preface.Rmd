@@ -1,0 +1,22 @@
+---
+layout: page
+title: Fancy Title
+bibliography: bibliography.bib
+---
+
+## Contents
+
+[Slides](slides/test.pdf)
+
+***
+
+## Exercises
+
+[Exercise 1](https://colab.research.google.com/drive/1DWOyuhCFEke5ewwprmarsYzSmK7W4pTy?usp=sharing)
+
+## Further reading
+
+---
+nocite: | 
+  @li2017hyperband, @probstetal2019
+...
