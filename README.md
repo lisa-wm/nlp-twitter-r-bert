@@ -14,7 +14,7 @@ This website contains material used in the bloc seminar **Einführung in NLP-Anw
 ***
 
 ## **0 Preface**
-What to expect (and what not)
+🧭 What to expect (and what not)
 
 <!-- [Contents](pages/0_preface.html) -->
 [Contents](pages/test.html)
