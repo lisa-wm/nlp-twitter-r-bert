@@ -10,7 +10,8 @@ Asmik Nalmpatian ([GitHub](https://github.com/asmiknalmpatian))
 
 Lisa Wimmer ([GitHub](https://github.com/lisa-wm))
 
-![](figures/pp.PNG){:height="50%" width="50%"}
+[comment]: # ![](figures/pp.PNG)
+<img src="figures/pp.PNG" width="100" height="100">
 
 ***
 
