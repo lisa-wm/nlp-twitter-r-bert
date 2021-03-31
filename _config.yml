@@ -1,0 +1,9 @@
+plugins:
+  - jekyll-remote-theme
+  - jekyll-sitemap
+
+
+remote_theme: heiswayi/the-plain
+logo_url: https://avatars3.githubusercontent.com/u/53944070?s=400&u=076db134498ef0fd6a684b5055da99345df0e358&v=4
+ 
+title:  "Fortgeschrittene Programmierung Pestwinter 20/21"  
