@@ -13,7 +13,7 @@ This website contains material used in the bloc seminar **Einführung in NLP-Anw
 
 ***
 
-## **0 PREFACE**
+# **0 PREFACE**
 What to expect (and what not)
 
 [Contents](pages/test.html)
@@ -21,14 +21,38 @@ What to expect (and what not)
 ***
 
 ## **1 INTRO**
-Intro NLP <br/> `quanteda` universe <br/> Task <br/> Data
+A brief intro to **natural language processing** and the task at hand
 
 ***
 
-## **2 INTRO**
-###  What to expect (and what not)
+## **2 NLP WITH R**
+### **2.1 FEATURE GENERATION**
+Scraping, basic text cleaning & (static) feature generation
 
 ***
 
-## **1 INTRO**
-###  What to expect (and what not)
+### **2.2 TOPIC MODELING**
+Extracting topics from text
+
+***
+
+### **2.3 SENTIMENT ANALYSIS**
+Creating a classification task & solve it using machine learning
+
+***
+
+### **2.4 RESULTS & VISUALIZATION**
+Analysing and visualizing results
+
+***
+
+## **3 NLP WITH BERT**
+### **3.1 DEEP LEARNING & TRANSFER LEARNING**
+Teaching languages to machines
+
+***
+
+### **3.2 BERT**
+NLP using BERT
+
+
