@@ -4,5 +4,5 @@ plugins:
 
 
 remote_theme: heiswayi/the-plain
-logo_url: https://github.com/lisa-wm/nlp-twitter-r-bert/blob/main/figures/logo.png
+logo_url: figures/logo.png
 title: "Intro to NLP with R & Python for Twitter data"
