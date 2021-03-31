@@ -21,38 +21,38 @@ What to expect (and what not)
 ***
 
 ## **1 Intro**
-A brief intro to **natural language processing** and the task at hand
+💬 A brief intro to **natural language processing** and the task at hand
 
 ***
 
 ## **2 NLP with R**
 ### **2.1 Feature generation**
-Scraping, basic text cleaning & (static) feature generation
+💼Scraping, basic text cleaning & (static) feature generation
 
 ***
 
 ### **2.2 Topic modeling**
-Extracting topics from text
+🌐 Extracting topics from text
 
 ***
 
 ### **2.3 Sentiment analysis**
-Creating a classification task & solve it using machine learning
+🚀 Creating a classification task & solve it using machine learning
 
 ***
 
 ### **2.4 Results & visualization**
-Analysing and visualizing results
+📈 Analysing and visualizing results
 
 ***
 
 ## **3 NLP with BERT**
 ### **3.1 Deep learning & transfer learning**
-Teaching languages to machines
+🧠 Teaching languages to machines
 
 ***
 
 ### **3.2 BERT**
-NLP using BERT
+💥 NLP using BERT
 
 
