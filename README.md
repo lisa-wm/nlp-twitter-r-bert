@@ -27,7 +27,7 @@ What to expect (and what not)
 
 ## **2 NLP with R**
 ### **2.1 Feature generation**
-💼Scraping, basic text cleaning & (static) feature generation
+💼 Scraping, basic text cleaning & (static) feature generation
 
 ***
 
