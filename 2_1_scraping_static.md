@@ -31,8 +31,7 @@ Which of the following is not also the last name of a **good** singer?
 - [ ] Earth (Orbit/Moon)
 - [ ] Mars
 
-[Solution](2_1_quiz.rmd)
-</span>
+[Solution](2_1_quiz.md)
 
 ***
 
