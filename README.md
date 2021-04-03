@@ -20,13 +20,13 @@ This website contains material used in the bloc seminar **Einführung in NLP-Anw
 ***
 
 ## **1 Intro**
-💬 [A brief intro to natural language processing (NLP) and the task at hand](template.html)
+💬 [A brief intro to natural language processing (NLP) and the task at hand](1_intro.html)
 
 ***
 
 ## **2 NLP with R**
-### **2.1 Feature generation**
-💼 [Scraping, basic text cleaning & (static) feature generation](template.html)
+### **2.1 Scraping, cleaning & static feature generation**
+💼 [Get the data, do some pre-processing and extract static features](2_1_scraping_static.html)
 
 ### **2.2 Topic modeling**
 🌐 [Extracting topics from text](template.html)
