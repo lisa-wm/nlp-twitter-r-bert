@@ -20,7 +20,9 @@ Slides
 
 
 <span style="color: red;">
-Demo 3: Python code demo (additional material)
+Demo 3: Scraping in Python (additional material)
+  
+Demo 4: Regex
 </span>
 
 ***
