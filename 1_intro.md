@@ -6,16 +6,12 @@ bibliography: bibliography.bib
 
 ## Contents
 
-[Slides](slides/test.pdf)
-
-***
-
-## Exercises
-
-[Exercise 1](https://colab.research.google.com/drive/1DWOyuhCFEke5ewwprmarsYzSmK7W4pTy?usp=sharing)
+[Slides](slides/slides_1.pdf)
 
 ***
 
 ## Further reading
 
+<span style="color: red;">
 S. Mart (2021): Good book, nice outlet.
+</span>
