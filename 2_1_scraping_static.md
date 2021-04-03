@@ -15,8 +15,11 @@ Slides
 ## Code demos
 
 [Demo 1: Web Scraping Example](demos/Web_Scraping_Example_Lisa.html)
+
+[Demo 2: Twitter Scraping Example](demos/Twitter_Scraping_Example_Lisa.html)
+
+
 <span style="color: red;">
-Demo 2: twitter scraping example
 Demo 3: Python code demo (additional material)
 </span>
 
