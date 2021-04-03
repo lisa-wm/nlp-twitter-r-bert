@@ -10,7 +10,7 @@ It probably goes without saying, but this tutorial is obviously just a glimpse i
 
 We would like to offer some guidance and support people that are new to the topic with something to start off on. 
 
-As we do by no means claim to have mastered the covered topics beyond room for improvement, please feel free to address us with any feedback or insights of your own 📧
+As we do by no means claim to have mastered the covered topics fully, please feel free to address us with any feedback or insights of your own 📧
 
 ***
 
