@@ -24,7 +24,7 @@ We will do exercises in **Google Colab** to ensure everybody works under the sam
 
 For this, you will need a Gmail address.
 
-when you launch a Google Colab notebook it will per default open a Python environment.
+When you launch a Google Colab notebook it will per default open a Python environment.
 The easiest way to switch to R is to directly access https://colab.to/r.
 
 You can check by clicking `Runtime` ⏩ `Change runtime type`, upon which the following window should open:
