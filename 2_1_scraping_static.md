@@ -23,7 +23,6 @@ Slides
 Demo 3: Scraping in Python (additional material)
   
 Demo 4: Regex
-</span>
 
 ***
 
@@ -42,8 +41,10 @@ Which of the following is not also the last name of a **good** singer?
 
 ## Exercises
 
+❓ [Exercise 1: Scraping](exercises/exercise_scraping_lisa_task.ipynb)
+💡 [Solution](exercises/exercise_scraping_lisa_solution.ipynb)
+
 <span style="color: red;">
-Exercise 1: scraping
 Exercise 2: regex
 Exercise 3: dictionary look-up
 Exercise 4: static features
