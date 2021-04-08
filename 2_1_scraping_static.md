@@ -20,8 +20,7 @@ Slides
 
 
 <span style="color: red;">
-Demo 3: Scraping in Python (additional material)
-  
+Demo 3: Scraping in Python (additional material)  
 Demo 4: Regex
 
 ***
@@ -35,10 +34,8 @@ Demo 4: Regex
 💡 [*Solution*](exercises/regex_solution.ipynb)
 
 <span style="color: red;">
-
 Exercise 3: dictionary look-up
 Exercise 4: static features
-</span>
 
 ***
 
