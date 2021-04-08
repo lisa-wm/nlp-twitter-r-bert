@@ -29,9 +29,9 @@ The easiest way to switch to *R* is to directly access [https://colab.to/r](http
 
 You should see something like this:
 
-![image](https://user-images.githubusercontent.com/63582944/113971994-228b1f00-983a-11eb-9df6-2435ff1e64bd.png)
+![image](https://user-images.githubusercontent.com/63582944/113972749-777b6500-983b-11eb-9cdc-8adebacba704.png)
 
-![image](https://user-images.githubusercontent.com/63582944/113972134-667e2400-983a-11eb-8fb6-90126b718e09.png)
+![image](https://user-images.githubusercontent.com/63582944/113972814-92e67000-983b-11eb-8cd3-8a5d872b8c92.png)
 
 In order to make sure you are operating in an *R* environment, you can check by clicking `Runtime` ⏩ `Change runtime type`, upon which the following window should open:
 
