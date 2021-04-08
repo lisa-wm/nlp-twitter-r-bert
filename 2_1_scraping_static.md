@@ -41,8 +41,8 @@ Which of the following is not also the last name of a **good** singer?
 
 ## Exercises
 
-❓ [Exercise 1: Scraping](exercises/exercise_scraping_lisa_task.ipynb)
-💡 [Solution](exercises/exercise_scraping_lisa_solution.ipynb)
+[Exercise 1: Scraping](exercises/exercise_scraping_lisa_task.ipynb)
+💡 [*Solution*](exercises/exercise_scraping_lisa_solution.ipynb)
 
 <span style="color: red;">
 Exercise 2: regex
