@@ -14,9 +14,9 @@ Slides
 
 ## Code demos
 
-[Demo 1: Web Scraping Example](demos/scraping_twitter.html)
+[Demo 1: Web Scraping Example](demos/scraping_web.html)
 
-[Demo 2: Twitter Scraping Example](demos/scraping_web.html)
+[Demo 2: Twitter Scraping Example](demos/scraping_twitter.html)
 
 [Demo 4: Regular Expressions](demos/regex.html)
 
@@ -35,10 +35,8 @@ Demo 3: Scraping in Python (additional material)
 💡 [*Solution*](exercises/regex_solution.ipynb)
 
 <span style="color: red;">
-
 Exercise 3: dictionary look-up
 Exercise 4: static features
-</span>
 
 ***
 
