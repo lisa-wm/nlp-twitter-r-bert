@@ -18,11 +18,11 @@ Slides
 
 [Demo 2: Twitter Scraping Example](demos/scraping_web.html)
 
+[Demo 4: Regular Expressions](demos/regex.html)
+
 
 <span style="color: red;">
 Demo 3: Scraping in Python (additional material)
-  
-Demo 4: Regex
 
 ***
 
