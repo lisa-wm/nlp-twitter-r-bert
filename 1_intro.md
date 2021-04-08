@@ -31,7 +31,7 @@ You should see something like this:
 
 ![image](https://user-images.githubusercontent.com/63582944/113972749-777b6500-983b-11eb-9cdc-8adebacba704.png)
 
-![image](https://user-images.githubusercontent.com/63582944/113972814-92e67000-983b-11eb-8cd3-8a5d872b8c92.png)
+![image](https://user-images.githubusercontent.com/63582944/113972875-b1e50200-983b-11eb-87ac-e9da65524523.png)
 
 In order to make sure you are operating in an *R* environment, you can check by clicking `Runtime` ⏩ `Change runtime type`, upon which the following window should open:
 
