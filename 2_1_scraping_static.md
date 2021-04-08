@@ -14,9 +14,9 @@ Slides
 
 ## Code demos
 
-[Demo 1: Web Scraping Example](demos/scraping_twitter.html)
+[Demo 1: Web Scraping Example](demos/scraping_web.html)
 
-[Demo 2: Twitter Scraping Example](demos/scraping_web.html)
+[Demo 2: Twitter Scraping Example](demos/scraping_twitter.html)
 
 
 <span style="color: red;">
