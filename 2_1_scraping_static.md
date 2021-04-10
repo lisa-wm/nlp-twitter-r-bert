@@ -20,6 +20,7 @@ Slides
 
 [Demo 4: Regular Expressions](demos/regex.html)
 
+[Demo 5: Basic Text Cleaning](demos/text_cleaning.html)
 
 <span style="color: red;">
 Demo 3: Scraping in Python (additional material)
