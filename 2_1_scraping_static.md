@@ -18,8 +18,7 @@ Slides
 
 [Demo 2: Twitter Scraping Example](demos/scraping_twitter.html)
 
-<span style="color: red;">
-Demo 3: Scraping in Python (additional material)
+<span style="color: red;">Demo 3: Scraping in Python (additional material)</span>
 
 [Demo 4: Regular Expressions](demos/regex.html)
 
