@@ -24,6 +24,18 @@ Slides
 
 [Demo 5: Basic Text Cleaning](demos/text_cleaning.html)
 
+[Demo 5: Static Feature Extraction](demos/static_feature_extraction.html)
+
+***
+
+## Data
+
+[Twitter data set](data/twitter_data.csv)
+
+[Global polarity clues](data/global_polarity_clues.RDS) (extracted from http://www.ulliwaltinger.de/sentiment/)
+
+[Emojis unicode representation and polarity](data/emojis_unicode.csv) (extracted from https://github.com/today-is-a-good-day/emojis/blob/master/emDict.csv)
+
 ***
 
 ## Exercises
