@@ -24,7 +24,7 @@ Slides
 
 [Demo 5: Basic Text Cleaning](demos/text_cleaning.html)
 
-[Demo 5: Static Feature Extraction](demos/static_feature_extraction.html)
+[Demo 6: Static Feature Extraction](demos/static_feature_extraction.html)
 
 ***
 
