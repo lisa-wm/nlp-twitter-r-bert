@@ -9,7 +9,7 @@ This website contains material used in the bloc seminar **Einführung in NLP-Anw
 
 <img src="figures/bild_asmik.jfif" width="100" height="100"> &nbsp; &nbsp; Asmik Nalmpatian 💻 [GitHub](https://github.com/asmiknalmpatian)
 
-<img src="figures/bild_lisa.jpg" width="100" height="100"> &nbsp; &nbsp; Lisa Wimmer 💻 [GitHub](https://github.com/lisa-wm)
+<img src="figures/bild_lisa.jpg" width="100" height="100"> &nbsp; &nbsp; Lisa Wimmer 💻 [GitHub](https://github.com/lisa-wm) 
 
 ***
 
