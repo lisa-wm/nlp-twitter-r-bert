@@ -30,15 +30,15 @@ bibliography: bibliography.bib
 
 [Twitter data set](data/twitter_data.csv)
 
-[Global polarity clues](data/global_polarity_clues.RDS) (extracted from [here](http://www.ulliwaltinger.de/sentiment/))
-
-[Emojis unicode representation and polarity](data/emojis_unicode.csv) (extracted from [here](https://github.com/today-is-a-good-day/emojis/blob/master/emDict.csv))
-
 [Twitter corpus](data/twitter_corpus.RDS)
 
 [Twitter dfm](data/twitter_dfm.RDS)
 
 [Static features](data/twitter_static_features.RDS)
+
+[Global polarity clues](data/global_polarity_clues.RDS) (extracted from [here](http://www.ulliwaltinger.de/sentiment/))
+
+[Emojis unicode representation and polarity](data/emojis_unicode.csv) (extracted from [here](https://github.com/today-is-a-good-day/emojis/blob/master/emDict.csv))
 
 ***
 
