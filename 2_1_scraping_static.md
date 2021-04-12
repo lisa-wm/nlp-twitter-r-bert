@@ -34,7 +34,11 @@ bibliography: bibliography.bib
 
 [Emojis unicode representation and polarity](data/emojis_unicode.csv) (extracted from https://github.com/today-is-a-good-day/emojis/blob/master/emDict.csv)
 
-[Pre-procssed Twitter corpus](data/twitter_corpus.RDS)
+[Twitter corpus](data/twitter_corpus.RDS)
+
+[Twitter dfm](data/twitter_dfm.RDS)
+
+[Static features](data/twitter_static_features.RDS)
 
 ***
 
