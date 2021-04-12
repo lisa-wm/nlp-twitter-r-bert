@@ -6,9 +6,7 @@ bibliography: bibliography.bib
 
 ## Contents
 
-<span style="color: red;">
-Slides
-</span>
+[Slides](slides/slides_2.pdf)
 
 ***
 
