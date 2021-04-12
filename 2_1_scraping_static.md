@@ -30,9 +30,9 @@ bibliography: bibliography.bib
 
 [Twitter data set](data/twitter_data.csv)
 
-[Global polarity clues](data/global_polarity_clues.RDS) (extracted from http://www.ulliwaltinger.de/sentiment/)
+[Global polarity clues](data/global_polarity_clues.RDS) (extracted from [](http://www.ulliwaltinger.de/sentiment/))
 
-[Emojis unicode representation and polarity](data/emojis_unicode.csv) (extracted from https://github.com/today-is-a-good-day/emojis/blob/master/emDict.csv)
+[Emojis unicode representation and polarity](data/emojis_unicode.csv) (extracted from [](https://github.com/today-is-a-good-day/emojis/blob/master/emDict.csv))
 
 [Pre-procssed Twitter corpus](data/twitter_corpus.RDS)
 
