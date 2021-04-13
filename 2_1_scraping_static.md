@@ -26,6 +26,19 @@ bibliography: bibliography.bib
 
 ***
 
+## Exercises
+
+[Exercise 1: Scraping](exercises/exercise_scraping_task.ipynb)
+💡 [*Solution*](exercises/exercise_scraping_solution.ipynb)
+
+[Exercise 2: Regular Expressions](exercises/exercise_regex_task.ipynb)
+💡 [*Solution*](exercises/exercise_regex_solution.ipynb)
+
+[Exercise 3: Static Feature Extraction](exercises/exercise_static_features_task.ipynb)
+💡 [*Solution*](exercises/exercise_static_features_solution.ipynb)
+
+***
+
 ## Data
 
 [Twitter data set](data/twitter_data.csv)
@@ -39,19 +52,6 @@ bibliography: bibliography.bib
 [Global polarity clues](data/global_polarity_clues.RDS) (extracted from [here](http://www.ulliwaltinger.de/sentiment/))
 
 [Emojis unicode representation and polarity](data/emojis_unicode.csv) (extracted from [here](https://github.com/today-is-a-good-day/emojis/blob/master/emDict.csv))
-
-***
-
-## Exercises
-
-[Exercise 1: Scraping](exercises/exercise_scraping_task.ipynb)
-💡 [*Solution*](exercises/exercise_scraping_solution.ipynb)
-
-[Exercise 2: Regular Expressions](exercises/exercise_regex_task.ipynb)
-💡 [*Solution*](exercises/exercise_regex_solution.ipynb)
-
-[Exercise 3: Static Feature Extraction](exercises/exercise_static_features_task.ipynb)
-💡 [*Solution*](exercises/exercise_static_features_solution.ipynb)
 
 ***
 
