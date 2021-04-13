@@ -44,15 +44,14 @@ bibliography: bibliography.bib
 
 ## Exercises
 
-[Exercise 1: Scraping](exercises/scraping_task.ipynb)
-💡 [*Solution*](exercises/scraping_solution.ipynb)
+[Exercise 1: Scraping](exercises/exercise_scraping_task.ipynb)
+💡 [*Solution*](exercises/exercise_scraping_solution.ipynb)
 
-[Exercise 2: Regular Expressions](exercises/regex_task.ipynb)
-💡 [*Solution*](exercises/regex_solution.ipynb)
+[Exercise 2: Regular Expressions](exercises/exercise_regex_task.ipynb)
+💡 [*Solution*](exercises/exercise_regex_solution.ipynb)
 
-<span style="color: red;">
-Exercise 3: dictionary look-up
-Exercise 4: static features
+[Exercise 3: Static Feature Extraction](exercises/exercise_static_features_task.ipynb)
+💡 [*Solution*](exercises/exercise_static_features_solution.ipynb)
 
 ***
 
