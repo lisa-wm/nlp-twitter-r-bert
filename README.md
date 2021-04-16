@@ -29,7 +29,7 @@ This website contains material used in the bloc seminar **Einführung in NLP-Anw
 💼 [Get the data, do some pre-processing and extract static features](2_1_scraping_static.html)
 
 ### **II-2 Topic Modeling**
-🌐 [Extracting topics from text](template.html)
+🌐 [Extracting topics from text](2_2_topic_modeling.html)
 
 ### **II-3 Sentiment Analysis**
 🚀 [Creating a classification task & solve it using machine learning](template.html)
