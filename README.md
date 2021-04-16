@@ -39,7 +39,7 @@ This website contains material used in the bloc seminar **Einführung in NLP-Anw
 
 ***
 
-## **III NLP with BERT**
+## **III NLP with Python**
 ### **III-1 Deep Learning & Transfer Learning**
 🧠 [Teaching languages to machines](template.html)
 
