@@ -1,16 +1,16 @@
 ---
 layout: page
-title: 2.1 Scraping & Static Feature Generation
+title: II-1 Scraping, Cleaning & Static Feature Extraction
 bibliography: bibliography.bib
 ---
 
 ## Contents
 
-[Slides](slides/slides_2.pdf)
+[Slides](slides/slides_II_1.pdf)
 
 ***
 
-## Code demos
+## Code Demos
 
 [Demo 1: Web Scraping Example](demos/scraping_web.html)
 
@@ -55,7 +55,7 @@ bibliography: bibliography.bib
 
 ***
 
-## Further reading
+## Further Reading
 
 <span style="color: red;">
 List sources

@@ -1,16 +1,16 @@
 ---
 layout: page
-title: 1 Intro
+title: I Intro
 bibliography: bibliography.bib
 ---
 
 ## Contents
 
-[Slides](slides/slides_1.pdf)
+[Slides](slides/slides_I.pdf)
 
 ***
 
-## Further reading
+## Further Reading
 
 <span style="color: red;">
 S. Mart (2021): Good book, nice outlet.
@@ -18,7 +18,7 @@ S. Mart (2021): Good book, nice outlet.
 
 ***
 
-## Technical set-up
+## Technical Set-Up
 
 We will do exercises in [**Google Colab**](https://www.youtube.com/watch?v=inN8seMm7UI) to ensure everybody works under the same technical conditions.
 
