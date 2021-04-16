@@ -8,6 +8,8 @@ bibliography: bibliography.bib
 
 [Slides](slides/slides_II_2.pdf)
 
+[Expert Talk](slides/slides_stm.pdf) *by Patrick Schulze & Simon Wiegrebe*
+
 ***
 
 ## Code Demos
