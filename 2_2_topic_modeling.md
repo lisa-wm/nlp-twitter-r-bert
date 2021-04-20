@@ -16,7 +16,7 @@ bibliography: bibliography.bib
 
 <span style="color: red;">
 
-[Demo 7: STM]()
+[Demo 7: STM](demos/topic_modeling_stm.html)
 
 [Demo 8: Keyword-Based Topic Extraction]()
 
