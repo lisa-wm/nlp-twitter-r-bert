@@ -16,7 +16,7 @@ bibliography: bibliography.bib
 
 [Demo 2: Twitter Scraping Example](demos/scraping_twitter.html)
 
-[Demo 3: Scraping with Python](demos/scraping_python.html)
+[Demo 3: Scraping with Python](demos/scraping_python.html) *additional material*
 
 [Demo 4: Regular Expressions](demos/regex.html)
 
