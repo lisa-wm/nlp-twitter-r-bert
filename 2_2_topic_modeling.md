@@ -18,18 +18,18 @@ bibliography: bibliography.bib
 
 [Demo 7: STM](demos/topic_modeling_stm.html)
 
-[Demo 8: Keyword-Based Topic Extraction]()
-
 ***
 
 ## Exercises
 
-[Exercise 4: Analyzing Topics]()
-💡 [*Solution*]()
+[Exercise 4: Analyzing Topics](exercises/exercise_topic_modeling_task.ipynb)
+💡 [*Solution*](exercises/exercise_topic_modeling_solution.ipynb)
 
 ***
 
 ## Data
+
+[Medium Articles](data/articles.RDS)
 
 ***
 
