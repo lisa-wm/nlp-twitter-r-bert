@@ -22,7 +22,7 @@ bibliography: bibliography.bib
 
 ## Exercises
 
-[Exercise 4: Analyzing Topics](exercises/exercise_topic_modeling_task.ipynb)
+[Exercise 4: Topic Modeling](exercises/exercise_topic_modeling_task.ipynb)
 💡 [*Solution*](exercises/exercise_topic_modeling_solution.ipynb)
 
 ***
