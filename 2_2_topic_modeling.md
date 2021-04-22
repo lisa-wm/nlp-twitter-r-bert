@@ -35,6 +35,4 @@ bibliography: bibliography.bib
 
 ## Further Reading
 
-<span style="color: red;">
-List sources
-</span>
+[Blogpost: Topic Modelin of Sherlock Holmes Stories](https://juliasilge.com/blog/sherlock-holmes-stm/)
