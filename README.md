@@ -32,7 +32,7 @@ This website contains material used in the bloc seminar **Einführung in NLP-Anw
 🌐 [Extracting topics from text](2_2_topic_modeling.html)
 
 ### **II-3 Sentiment Analysis**
-🚀 [Creating a classification task & solve it using machine learning](template.html)
+🚀 [Creating a classification task & solving it using machine learning](template.html)
 
 ### **II-4 Results & Visualization**
 📈 [Analyzing and visualizing results](template.html)
