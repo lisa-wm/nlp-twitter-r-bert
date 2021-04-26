@@ -35,4 +35,4 @@ bibliography: bibliography.bib
 
 ## Further Reading
 
-[Blogpost: Topic Modelin of Sherlock Holmes Stories](https://juliasilge.com/blog/sherlock-holmes-stm/)
+[Blogpost: Topic Modeling of Sherlock Holmes Stories](https://juliasilge.com/blog/sherlock-holmes-stm/)
