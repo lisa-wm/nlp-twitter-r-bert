@@ -51,8 +51,6 @@ bibliography: bibliography.bib
 
 [Global polarity clues](data/global_polarity_clues.RDS) (extracted from [here](http://www.ulliwaltinger.de/sentiment/))
 
-[Emojis unicode representation and polarity](data/emojis_unicode.csv) (extracted from [here](https://github.com/today-is-a-good-day/emojis/blob/master/emDict.csv))
-
 ***
 
 ## Further Reading
