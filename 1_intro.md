@@ -12,9 +12,11 @@ bibliography: bibliography.bib
 
 ## Further Reading
 
-<span style="color: red;">
-S. Mart (2021): Good book, nice outlet.
-</span>
+[Bird, S., Klein, E., and Loper, E. (2009): Natural Language Processing with Python, O'Reilly](literature/bird_etal_2009.pdf)
+
+[Welbers, K., van Attefeldt, W., and Benoit., K. (2017): Text Analysis in R, *Communication Methods and Measures*, 11(4), pp. 245-265](literature/welbers_etal_2017.pdf)
+
+[Introductory Blogpost](https://towardsdatascience.com/your-guide-to-natural-language-processing-nlp-48ea2511f6e1)
 
 ***
 
