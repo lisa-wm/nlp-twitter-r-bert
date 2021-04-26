@@ -36,3 +36,5 @@ bibliography: bibliography.bib
 ## Further Reading
 
 [Blogpost: Topic Modeling of Sherlock Holmes Stories](https://juliasilge.com/blog/sherlock-holmes-stm/)
+
+[Schulze, P., and Wiegrebe, S. (2020): Twitter in the Parliament -- A Text-Based Analysis of German Political Entities](slides/paper_stm.pdf)
