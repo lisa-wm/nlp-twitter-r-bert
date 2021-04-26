@@ -37,6 +37,12 @@ bibliography: bibliography.bib
 
 [Aggarwal, C. (2018): Machine Learning for Text](literature/aggarwal_2018.pdf)
 
-[Blogpost: Topic Modeling of Sherlock Holmes Stories](https://juliasilge.com/blog/sherlock-holmes-stm/)
+[Banks et al (2018): A Review of Best Practice Recommendations for Text Analysis in R (and a User-Friendly App)](literature/banks_etal_2018.pdf)
+
+[Fu et al. (2020): Agreeing to Disagree. Choosing Among Eight Topic-Modeling Methods](literature/fu_etal_2020.pdf)
 
 [Schulze, P., and Wiegrebe, S. (2020): Twitter in the Parliament -- A Text-Based Analysis of German Political Entities](literature/schulze_wiegrebe_2020.pdf)
+
+[Blogpost: Topic Modeling of Sherlock Holmes Stories](https://juliasilge.com/blog/sherlock-holmes-stm/)
+
+[All about the R STM Implementation](https://www.structuraltopicmodel.com/)
