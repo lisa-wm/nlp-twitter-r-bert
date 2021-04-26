@@ -57,6 +57,19 @@ bibliography: bibliography.bib
 
 ## Further Reading
 
-<span style="color: red;">
-List sources
-</span>
+[Wickham, H., and Grolemund, G. (2017): R for Data Science](https://r4ds.had.co.nz/strings.html)
+
+[rtweet Tutorial](https://rtweet-workshop.mikewk.com/)
+
+[CSS Tutorial](https://flukeout.github.io/#)
+
+[SelectorGadget](https://selectorgadget.com/)
+
+[Python Web Scraping Tutorial (beautifulsoup)](https://www.analyticsvidhya.com/blog/2015/10/beginner-guide-web-scraping-beautiful-soup-python/)
+
+[Python Web Scraping (tweepy)](https://docs.tweepy.org/en/latest/)
+
+[Regex Guide](https://cran.r-project.org/web/packages/stringr/vignettes/regular-expressions.html)
+
+[Regex Cheatsheet](https://www.rstudio.com/wp-content/uploads/2016/09/RegExCheatsheet.pdf)
+
