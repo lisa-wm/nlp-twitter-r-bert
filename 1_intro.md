@@ -14,6 +14,8 @@ bibliography: bibliography.bib
 
 [Bird, S., Klein, E., and Loper, E. (2009): Natural Language Processing with Python, O'Reilly](literature/bird_etal_2009.pdf)
 
+[Indurkhya, N., and Damerau, F. (2010): Handbook of Natural Language Processing, CRC Press](https://ebookcentral.proquest.com/lib/ub-lmu/reader.action?docID=565922&ppg=1)
+
 [Welbers, K., van Attefeldt, W., and Benoit., K. (2017): Text Analysis in R, *Communication Methods and Measures*, 11(4), pp. 245-265](literature/welbers_etal_2017.pdf)
 
 [Introductory Blogpost](https://towardsdatascience.com/your-guide-to-natural-language-processing-nlp-48ea2511f6e1)
