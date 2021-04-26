@@ -14,8 +14,6 @@ bibliography: bibliography.bib
 
 ## Code Demos
 
-<span style="color: red;">
-
 [Demo 7: STM](demos/topic_modeling_stm.html)
 
 ***
@@ -29,7 +27,7 @@ bibliography: bibliography.bib
 
 ## Data
 
-[Medium Articles](data/articles.RDS)
+[Medium Articles](data/articles.RDS) (extracted from [here](https://www.kaggle.com/hsankesara/medium-articles?select=articles.csv))
 
 ***
 
@@ -45,4 +43,4 @@ bibliography: bibliography.bib
 
 [Blogpost: Topic Modeling of Sherlock Holmes Stories](https://juliasilge.com/blog/sherlock-holmes-stm/)
 
-[All about the R STM Implementation](https://www.structuraltopicmodel.com/)
+[All About the R STM Implementation](https://www.structuraltopicmodel.com/)
