@@ -71,3 +71,5 @@ bibliography: bibliography.bib
 
 [Regex Cheatsheet](https://www.rstudio.com/wp-content/uploads/2016/09/RegExCheatsheet.pdf)
 
+[Regex Checking Interface](https://regex101.com/)
+
