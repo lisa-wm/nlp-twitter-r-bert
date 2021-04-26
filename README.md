@@ -32,16 +32,16 @@ This website contains material used in the bloc seminar **Einführung in NLP-Anw
 🌐 [Extract topics from text](2_2_topic_modeling.html)
 
 ### **II-3 Sentiment Analysis**
-🚀 [Create a classification task & solve it using machine learning](template.html)
+🚀 [Create a classification task & solve it using machine learning](2_3_sentiment_analysis.html)
 
 ### **II-4 Results & Visualization**
-📈 [Analyze and visualize results](template.html)
+📈 [Analyze and visualize results](2_4_results.html)
 
 ***
 
 ## **III NLP with Python**
 ### **III-1 Deep Learning & Transfer Learning**
-🧠 [Teach languages to machines](template.html)
+🧠 [Teach languages to machines](3_1_dl_tl.html)
 
 ### **III-2 BERT**
-💥 [Nail NLP using BERT](template.html)
+💥 [Nail NLP using BERT](3_2_bert.html)
