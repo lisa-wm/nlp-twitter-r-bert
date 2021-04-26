@@ -73,3 +73,5 @@ bibliography: bibliography.bib
 
 [Regex Checking Interface](https://regex101.com/)
 
+[Somewhat Ugly But Super Extensive Regex Guide](https://www.rexegg.com/)
+
