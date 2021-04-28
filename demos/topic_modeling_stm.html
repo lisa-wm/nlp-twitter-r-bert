@@ -616,7 +616,15 @@ twitter_docvars[sample(twitter_docvars[, .I], 5)]</code></pre>
 <p>…and, lastly, feed this information back into the original corpus object to save it for further usage:</p>
 <pre class="r"><code># Insert info back into corpus
 
-quanteda::docvars(twitter_corpus) &lt;- as.data.frame(twitter_docvars)</code></pre>
+twitter_corpus_with_topics &lt;- twitter_corpus
+
+quanteda::docvars(twitter_corpus_with_topics) &lt;- as.data.frame(twitter_docvars)
+
+# Save
+
+saveRDS(
+  twitter_corpus_with_topics, 
+  sprintf(&quot;%s/twitter_corpus_with_topics.RDS&quot;, path))</code></pre>
 <p><strong>So that’s how to model topics with an <code>stm</code>! Even though our training corpus is not easily clustered into topics, you hopefully got some idea how to handle this process code-wise. And then, we just do not always get lucky with such tasks in a sense that they can be expected to produce meaningful output all the time</strong> ¯|<em>(ツ)</em>/¯</p>
 </div>
 </div>
