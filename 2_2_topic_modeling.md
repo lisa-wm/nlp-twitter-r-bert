@@ -39,6 +39,8 @@ bibliography: bibliography.bib
 
 [Fu et al. (2020): Agreeing to Disagree. Choosing Among Eight Topic-Modeling Methods](literature/fu_etal_2020.pdf)
 
+[Schulze, P., Wiegrebe, S., Thurner, P., Heumann, C., Aßenmacher, A., and Wankmüller, S. (2021): Exploring Topic-Metadata Relationships with the STM. A Bayesian Approach](https://arxiv.org/pdf/2104.02496.pdf)
+
 [Schulze, P., and Wiegrebe, S. (2020): Twitter in the Parliament -- A Text-Based Analysis of German Political Entities](literature/schulze_wiegrebe_2020.pdf)
 
 [Blogpost: Topic Modeling of Sherlock Holmes Stories](https://juliasilge.com/blog/sherlock-holmes-stm/)

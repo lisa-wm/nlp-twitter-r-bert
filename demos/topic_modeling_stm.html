@@ -253,6 +253,8 @@ stopwords &lt;- c(
   stopwords, 
   c(&quot;der&quot;, &quot;die&quot;, &quot;das&quot;, &quot;was&quot;, &quot;wer&quot;, &quot;wie&quot;, &quot;ich&quot;, &quot;sie&quot;, &quot;wir&quot;, &quot;ihr&quot;))
 
+saveRDS(stopwords, sprintf(&quot;%s/stopwords.RDS&quot;, path))
+
 twitter_tokens &lt;- quanteda::tokens_remove(
   twitter_tokens,
   pattern = stopwords)
