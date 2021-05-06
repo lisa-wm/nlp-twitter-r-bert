@@ -35,7 +35,7 @@ bibliography: bibliography.bib
 
 ## Further Reading
 
-[Hvitfeldt, E., and Silge, J.: Supervised Machine Learning for Text Analysis in R](https://smltar.com/embeddings.html)
+[Hvitfeldt, E., and Silge, J. (2021): Supervised Machine Learning for Text Analysis in R](https://smltar.com/embeddings.html)
 
 [Introduction to Machine Learning Lecture](https://introduction-to-machine-learning.netlify.app/)
 
