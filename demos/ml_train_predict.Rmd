@@ -1,0 +1,580 @@
+---
+title: "Sentiment Analysis -- Training & Prediction"
+author: "Asmik & Lisa -- for Intro to NLP"
+date: "April/May 2021"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+![](../../Logo_Consulting.JPG)
+
+## Train Sentiment Analysis Classifier and Compute Prediction
+
+This demo is about **training a classifier for sentiment analysis and predicting sentiment labels**.
+
+We show how to perform sentiment analysis with machine learning methods. 
+More specifically, we will use a logistic regression model to predict sentiment labels in a binary classification task.
+
+The code is based on the `mlr3` universe, a unifying framework for a broad variety of tasks in supervised learning that subsumes many other packages and provides consistent syntax.
+This [book](https://mlr3book.mlr-org.com/) provides a great introduction to `mlr3`. Further examples with applied use cases may be found [here](https://mlr3gallery.mlr-org.com/).
+
+Note that it is built in `R6`. 
+Covering object-oriented programming (OOP) is beyond the scope of this course but we will mention some basics.
+The most important things to know here are: 
+
+* All objects are of a specific *class* for which different *methods* exist.
+* Methods are very similar to functions, but objects are modified *in place* rather than re-assigned (which is much more memory-friendly and natural to non-R programmers, we just need to pay attention that each operation might actually change our object even if we do not assign anything). 
+
+```{r setup_packages, message=FALSE, warning=FALSE}
+# Load required packages
+
+library(data.table)
+library(quanteda)
+library(mlr3verse)
+
+```
+
+### Perform train-test split
+
+```{r path, include = FALSE}
+
+path <- "5_seminar"
+
+```
+
+As always, we start by **reading** the data.
+Now there is one big BUT: we cannot simply take the data with topic embeddings as created in the last demo -- if we used these and splitted them into train and test sets, we would see information from the training observations leak into the test part.
+That is why we called topic labels and embeddings *dynamic* features.
+
+We want to avoid such bias and proceed as follows:
+
+1. We split the data without topic labels / embeddings into training and test data.
+2. We extract topics and compute topic-specific embeddings for our training data, the results of which we can then apply to our test data.
+
+We first read the static features:
+
+```{r read}
+
+# path <- ... (individual file location)
+
+twitter_features_static <- readRDS(sprintf("%s/twitter_features_static.RDS", path))
+
+```
+
+Next, we perform a **train-test split**:
+
+```{r read_sf}
+
+# Create a binary variable indicating whether the document belongs to training or test data (setting a seed for reproducibility and choosing 70% of data for training)
+
+set.seed(123)
+
+twitter_features_static$is_train <- rbinom(
+  n = nrow(twitter_features_static), 
+  size = 1, 
+  prob = 0.7)
+
+# Convert target variable to a factor
+
+twitter_features_static$label <- as.factor(twitter_features_static$label)
+
+# Perform split
+
+data_train <- twitter_features_static[is_train == 1]
+data_test <- twitter_features_static[is_train == 0]
+
+nrow(data_train) + nrow(data_test) == nrow(twitter_features_static)
+
+# Inspect
+
+list(train = head(data_train), test = head(data_test))
+
+```
+
+### Compute embeddings
+
+Now we compute the **topic-specific embeddings**.
+For the sake of clarity we have omitted the actual computation for this demo as things become a bit lengthy at this point code-wise.
+
+The basic idea is to compute topic labels and embeddings for the training data, just as we have seen before (using the same number of topics and dimensions, respectively), and storing the STM and embedding word vectors such that they can be used for prediction at test time.
+If you are interested in how this implemented, have a look at the [source code](https://github.com/lisa-wm/nlp-twitter-r-bert/tree/main/demos) of this demo.
+
+```{r tm_emb, eval=FALSE}
+
+embedding_values_train <- ...
+embedding_values_test <- ...
+
+```
+
+```{r tm, include=FALSE}
+
+# Load corpus and perform train-test split
+
+idx_train <- data_train$doc_id
+idx_test <- data_test$doc_id
+
+twitter_corpus <- readRDS(sprintf("%s/twitter_corpus.RDS", path))
+
+# Tokenize corpus
+
+twitter_tokens <- quanteda::tokens(
+  twitter_corpus,
+  what = "word",
+  remove_symbols = TRUE,
+  remove_numbers = TRUE,
+  remove_separators = TRUE,
+  split_hyphens = TRUE,
+  include_docvars = TRUE)
+
+twitter_tokens <- quanteda::tokens_wordstem(
+  twitter_tokens, 
+  language = "german")
+
+twitter_tokens <- quanteda::tokens_keep(
+  twitter_tokens,
+  pattern = c("[:upper:]([:lower:])+"),
+  valuetype = "regex",
+  case_insensitive = FALSE)
+
+twitter_tokens <- quanteda::tokens_tolower(twitter_tokens)
+
+stopwords <- readRDS(sprintf("%s/stopwords.RDS", path))
+
+twitter_tokens <- quanteda::tokens_remove(
+  twitter_tokens,
+  pattern = stopwords)
+
+twitter_tokens <- quanteda::tokens_select(twitter_tokens, min_nchar = 3)
+
+# Create dfm and define prevalence formula
+
+twitter_dfm <- quanteda::dfm(twitter_tokens)
+
+prevalence_formula <- as.formula(paste(
+  "", 
+  "party + bundesland", 
+  sep = "~"))
+
+twitter_dfm <- quanteda::dfm_subset(
+  twitter_dfm,
+  !is.na(party) & !is.na(bundesland) & !is.na(unemployment_rate) &
+    !is.na(share_pop_migration))
+
+twitter_dfm <- quanteda::dfm_select(
+  twitter_dfm,
+  names(quanteda::topfeatures(twitter_dfm, n = 300)))
+
+# Split data in train and test set
+
+twitter_dfm_train <- quanteda::dfm_subset(
+  twitter_dfm, 
+  quanteda::docnames(twitter_dfm) %in% idx_train)
+
+twitter_dfm_test <- quanteda::dfm_subset(
+  twitter_dfm, 
+  quanteda::docnames(twitter_dfm) %in% idx_test)
+
+# Create stm objects
+
+twitter_stm_train <- quanteda::convert(twitter_dfm_train, to = "stm")
+twitter_stm_test <- quanteda::convert(twitter_dfm_test, to = "stm")
+
+# Fit model
+
+topic_model <- stm::stm(
+  documents = twitter_stm_train$documents,
+  vocab = twitter_stm_train$vocab,
+  data = twitter_stm_train$meta,
+  K = 3,
+  prevalence = prevalence_formula,
+  gamma.prior = "L1",
+  seed = 1,
+  max.em.its = 15,
+  init.type = "Spectral",
+  verbose = FALSE)
+
+# Append topic probabilities
+
+topic_labels_train <- stm::make.dt(topic_model)[
+  , doc_id := names(twitter_stm_train$documents)
+  ][, docnum := NULL]
+
+topic_labels_train[
+  , topic_label := which.max(.SD), 
+  .SDcols = sprintf("Topic%d", seq_len(3L)), 
+  by = doc_id
+  ][, sprintf("Topic%d", seq_len(3L)) := NULL]
+
+# Predict topic probabilities for test data
+
+twitter_stm_test <- stm::alignCorpus(
+  new = twitter_stm_test,
+  old.vocab = topic_model$vocab)
+
+topic_labels_test <- data.table::as.data.table(
+  stm::fitNewDocuments(
+    model = topic_model,
+    documents = twitter_stm_test$documents,
+    newData = twitter_stm_test$meta,
+    origData = twitter_stm_train$meta,
+    prevalence = prevalence_formula)$theta)
+
+topic_labels_test[
+  , doc_id := names(twitter_stm_test$documents)
+  ][, topic_label := which.max(.SD), 
+    .SDcols = sprintf("V%d", seq_len(3L)), 
+    by = doc_id
+    ][, sprintf("V%d", seq_len(3L)) := NULL]
+
+# Feed topic information back in corpus
+
+twitter_corpus_train <- quanteda::corpus_subset(
+  twitter_corpus, 
+  quanteda::docnames(twitter_corpus) %in% idx_train)
+
+twitter_docvars_train <- data.table::as.data.table(
+  cbind(
+    doc_id = quanteda::docid(twitter_corpus_train),
+    quanteda::docvars(twitter_corpus_train)), 
+  key = "doc_id")
+
+twitter_docvars_train <- topic_labels_train[
+  twitter_docvars_train, on = "doc_id"]
+
+quanteda::docvars(twitter_corpus_train) <- as.data.frame(twitter_docvars_train)
+
+twitter_corpus_test <- quanteda::corpus_subset(
+  twitter_corpus, 
+  quanteda::docnames(twitter_corpus) %in% idx_test)
+
+twitter_docvars_test <- data.table::as.data.table(
+  cbind(
+    doc_id = quanteda::docid(twitter_corpus_test),
+    quanteda::docvars(twitter_corpus_test)), 
+  key = "doc_id")
+
+twitter_docvars_test <- topic_labels_test[
+  twitter_docvars_test, on = "doc_id"]
+
+quanteda::docvars(twitter_corpus_test) <- as.data.frame(twitter_docvars_test)
+
+```
+
+```{r emb, include=FALSE}
+
+# Train embeddings
+
+# Recode NA labels
+
+twitter_corpus_train$topic_label <- ifelse(
+  is.na(twitter_corpus_train$topic_label),
+  99, 
+  twitter_corpus_train$topic_label)
+
+# Subset corpus
+
+twitter_corpus_subsets_train <- lapply(
+  sort(unique(twitter_corpus_train$topic_label)),
+  function(i) quanteda::corpus_subset(twitter_corpus_train, topic_label == i))
+
+# Compute embeddings
+
+embeddings_train <- lapply(
+  
+  twitter_corpus_subsets_train,
+  
+  function(i) {
+    
+    tkns <- quanteda::tokens(
+      i,
+      what = "word",
+      remove_symbols = TRUE,
+      remove_punct = TRUE,
+      remove_numbers = TRUE,
+      remove_separators = TRUE,
+      split_hyphens = TRUE,
+      include_docvars = TRUE)
+      
+    tkns <- quanteda::tokens_wordstem(tkns, language = "german")
+      
+    tkns <- quanteda::tokens_remove(
+      quanteda::tokens_tolower(tkns),
+      pattern = stopwords)
+    
+    tkns_lst <- as.list(tkns)
+    itkns <- text2vec::itoken(tkns_lst, progressbar = FALSE)
+
+    vcb <- text2vec::create_vocabulary(itkns)
+    vcb <- text2vec::prune_vocabulary(vcb, term_count_min = 2)
+    vect <- text2vec::vocab_vectorizer(vcb)
+    
+    tcm <- text2vec::create_tcm(itkns, vect, skip_grams_window = 5) 
+    glv <- text2vec::GlobalVectors$new(rank = 3, x_max = 10)
+    wv_main <- glv$fit_transform(tcm, n_iter = 10, convergence_tol = 0.01)  
+    wv_cntxt <- glv$components
+    
+    word_vecs <- wv_main + t(wv_cntxt)
+
+    dtm <- quanteda::dfm_match(quanteda::dfm(tkns), rownames(word_vecs))
+    dtm <- text2vec::normalize(dtm, norm = "l1")
+
+    doc_embeddings <- as.matrix(dtm) %*% word_vecs
+    
+    doc_embeddings <- data.table::as.data.table(doc_embeddings)
+    doc_embeddings[, doc_id := quanteda::docnames(i)]
+    
+    list(
+      terms = rownames(word_vecs), 
+      word_vecs = word_vecs, 
+      doc_embeddings = doc_embeddings)
+    
+})
+
+# Create features for training data
+
+doc_embeddings_train <- lapply(embeddings_train, function(i) i$doc_embeddings)
+doc_id_train <- unlist(lapply(doc_embeddings_train, function(i) i$doc_id))
+invisible(lapply(
+  doc_embeddings_train, 
+  function(i) i[, doc_id := NULL]))
+
+doc_embeddings_train <- lapply(doc_embeddings_train, as.matrix)
+embedding_values_train <- do.call(Matrix::bdiag, doc_embeddings_train)
+embedding_values_train <- data.table::as.data.table(as.matrix(embedding_values_train))
+data.table::setnames(
+  embedding_values_train, 
+  sprintf("embedding_%d", seq_along(embedding_values_train)))
+
+embedding_values_train[, doc_id := ..doc_id_train]
+
+# Compute embeddings for test data
+
+twitter_corpus_test$topic_label <- ifelse(
+  is.na(twitter_corpus_test$topic_label),
+  99, 
+  twitter_corpus_test$topic_label)
+
+# Subset corpus
+
+twitter_corpus_subsets_test <- lapply(
+  sort(unique(twitter_corpus_test$topic_label)),
+  function(i) quanteda::corpus_subset(twitter_corpus_test, topic_label == i))
+
+embeddings_test <- lapply(
+  
+  seq_along(twitter_corpus_subsets_test),
+  
+  function(i) {
+    
+    tkns <- quanteda::tokens(
+      twitter_corpus_subsets_test[[i]],
+      what = "word",
+      remove_symbols = TRUE,
+      remove_punct = TRUE,
+      remove_numbers = TRUE,
+      remove_separators = TRUE,
+      split_hyphens = TRUE,
+      include_docvars = TRUE)
+      
+    tkns <- quanteda::tokens_wordstem(tkns, language = "german")
+      
+    tkns <- quanteda::tokens_remove(
+      quanteda::tokens_tolower(tkns),
+      pattern = stopwords)
+
+    dtm <- quanteda::dfm_match(quanteda::dfm(tkns), embeddings_train[[i]]$terms)
+    dtm <- text2vec::normalize(dtm, norm = "l1")
+
+    doc_embeddings <- as.matrix(dtm) %*% embeddings_train[[i]]$word_vecs
+    
+    doc_embeddings <- data.table::as.data.table(doc_embeddings)
+    doc_embeddings[
+      , doc_id := quanteda::docnames(twitter_corpus_subsets_test[[i]])]
+
+    doc_embeddings
+    
+})
+
+doc_id_test <- unlist(lapply(embeddings_test, function(i) i$doc_id))
+invisible(lapply(
+  embeddings_test, 
+  function(i) i[, doc_id := NULL]))
+
+doc_embeddings_test <- lapply(embeddings_test, as.matrix)
+embedding_values_test <- do.call(Matrix::bdiag, doc_embeddings_test)
+embedding_values_test <-
+  data.table::as.data.table(as.matrix(embedding_values_test))
+data.table::setnames(
+  embedding_values_test, 
+  sprintf("embedding_%d", seq_along(embedding_values_test)))
+
+embedding_values_test[, doc_id := ..doc_id_test]
+
+```
+
+```{r combine}
+
+# Collect all static and dynamic features
+
+data_train <- embedding_values_train[data_train, on = "doc_id"]
+data_test <- embedding_values_test[data_test, on = "doc_id"]
+
+```
+
+### Create classification task
+
+Now we are all set for sentiment analysis.
+The first step is to create a **task** object:
+
+```{r tsk}
+
+# Create task object
+
+task <- mlr3::TaskClassif$new("sentiment_analysis", data_train, target = "label")
+
+# Inspect
+
+task
+
+```
+Note that we need to make sure the `doc_id` variable, which is not a feature but merely an identifier, is exempt from the features.
+
+```{r colrole}
+
+# Set the role of doc_id to naming variable
+
+task$set_col_roles("doc_id", "name")
+
+```
+
+### Create and train learner
+
+The **learner** reflects our hypothesis about the feature-target relation. 
+
+`mlr3` supports a variety of different learning algorithms (convenient look-up via `mlr_learners`) and even more are available in the `mlr3learners` extension package.
+All are instantiated by the same call.
+
+We choose **logistic regression** here, a generalized version of the linear regression model that is able to predict class probabilities (if the concept seems somewhat distant in your memory, have a look into [one of the standard statistics books](https://web.stanford.edu/~hastie/Papers/ESLII.pdf), or into [this one](https://christophm.github.io/interpretable-ml-book/logistic.html#example-1), or check out one of the abundant blogposts and YouTube sources).
+
+The logistic regression model can be stated in different ways.
+We will often see something of the form
+
+\[\pi({x}_i) = \mathbb{P}(y_i = 1 \rvert 
+{x}_i) = \frac{\exp(\beta_0 + \mathbf{\beta}^T \mathbf{x}_i)}{1 + \exp(\beta_0 +
+\mathbf{\beta}^T \mathbf{x}_i)} = \frac{\exp(\beta_0 + \beta_1 x_{i, 1} + \dots + \beta_p x_{i, p})}{1 + \exp(\beta_0 + \beta_1 x_{i, 1} + \dots + \beta_p x_{i, p})},\]
+
+specifying the probability of being in class 1 (here: *positive* class) for a given observation $\mathbf{x}_i$.
+
+We can see how the so-called **log-odds** are related to the **linear predictor**:
+
+\[\beta_0 + \mathbf{\beta}^T \mathbf{x}_i = \log 
+\frac{\pi(\mathbf{x}_i)}{1 - \pi(\mathbf{x}_i)}.\]
+
+So we do not directly model the conditional mean, as in the standard linear model, but a transformed version of it (hence *generalized* linear modeling).
+Logistic regression does not require any hyperparameters, allowing us to skip the tuning part, and we can simply invoke a logistic regression learner by:
+
+```{r lrn}
+
+# Create learner
+
+learner <- mlr3::lrn("classif.log_reg", predict_type = "prob")
+
+learner
+
+```
+
+After instantiating the learner object, we do the actual **training** using our training task. 
+Note how the learner is modified in-place:
+
+```{r train, warning=FALSE}
+
+# Train learner on training task
+
+learner$train(task)
+
+```
+
+### Evaluate learner
+
+Now is the time for our model to output some **predictions** on the test set so we can evaluate its performance.
+
+```{r test, warning=FALSE}
+
+# Compute predictions
+
+data_test$label <- as.factor(data_test$label)
+predictions <- learner$predict_newdata(data_test)
+
+# Inspect confusion matrix
+
+list(predictions = predictions, confusion = predictions$confusion)
+
+```
+
+Our learner looks like it's doing pretty okay but not extremely accurate (it seems to struggle with the positive observations in particular). 
+Let's compute some **performance metrics** (list all available metrics with `mlr_measures`) to get a better picture:
+
+```{r eval}
+
+eval_metrics <- list(
+  mlr3::msr("classif.acc"), # accuracy
+  mlr3::msr("classif.ppv"), # positive predictive value
+  mlr3::msr("classif.fbeta") # f1 score
+)
+
+predictions$score(eval_metrics)
+
+```
+
+We can also plot the associated **ROC curve**:
+
+```{r roc}
+
+mlr3viz::autoplot(predictions, type = "roc") +
+  ggplot2::ggtitle("ROC curve for Twitter sentiment analysis")
+
+```
+
+All in all, we seem to have found a fairly decent model.
+It does not exactly achieve exciting performance, but the task at hand is actually a hard one (keep in mind that we try to predict the author's sentiment by such simple things as the amount of certain letters in the text).
+
+In a real application model selection does not stop here; we would compare and benchmark multiple learners against each other to find the best one for our task.
+For now, though, we stick with our logistic regression model.
+
+### Fit final model
+
+By splitting the data into train and test sets we deliberately forgo parts of the data for training (rule of thumb: more data, better model) so we had some spare observations for evaluation. 
+This allowed us to obtain a (slightly pessimistic) performance estimation.
+
+In the end we would typically train the learner on the entire data set and use the resulting, **final model** for predictions of future unseen data:
+
+```{r final, warning=FALSE}
+
+# Create task object
+
+data_total <- rbind(data_train, data_test)
+task_total <- mlr3::TaskClassif$new("sentiment_analysis_final", data_total, target = "label")
+task_total$set_col_roles("doc_id", "name")
+
+# Train learner
+
+learner$train(task_total)
+
+# Store model
+
+final_model <- learner$model
+
+# Inspect
+
+summary(final_model)
+
+```
+
+```{r save, include=FALSE}
+
+saveRDS(data_total, file = sprintf("%s/data_sentiment_analysis.RDS", path))
+
+```
+
+**And that's it for a first jump at sentiment analysis! We have performed a train-test split of our data, trained a logistic regression learner on the training task, used the resulting model to compute predictions for the test data to evaluate performance, and trained the final model we could now use for future sentiment analysis. **
